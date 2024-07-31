@@ -6,14 +6,15 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of Treggae is to …
+`Treggae` is your dancing companion for exploring gene signatures in the
+context of T-regs (T regulatory cells) - and not only
 
 ## Installation
 
 You can install the development version of Treggae like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+remotes::install_github("imbeimainz/Treggae")
 ```
 
 ## Example
@@ -21,7 +22,10 @@ You can install the development version of Treggae like so:
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-## basic example code
+library("Treggae")
+Treggae::signature("signature_name")
+
+Treggae::list_signatures()
 ```
 
 ## Code of Conduct

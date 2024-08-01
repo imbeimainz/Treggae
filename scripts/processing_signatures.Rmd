@@ -1,0 +1,80 @@
+---
+title: Processing the Signature collection Excel file
+author: Federico Marini
+---
+
+```{r style, echo=FALSE, results='hide', message=FALSE}
+library(BiocStyle)
+knitr::opts_chunk$set(error=FALSE, message=FALSE, warning=FALSE)
+```
+
+# Reading in the Excel file
+
+```{r}
+tbl_allsheets <- readxl::excel_sheets("Signature_Genes.xlsx")
+
+tbl_allsheets
+
+
+tbl_firstsheet <- readxl::read_excel("Signature_Genes.xlsx")
+tbl_firstsheet
+```
+
+
+TODO: note down what format the identifiers are provided
+
+TODO: keep track of the provenance, and how the list was obtained
+
+use attributes? lists? some form of metadata?
+
+```{r}
+all_tbls <- lapply(tbl_allsheets, 
+                   function(arg) readxl::read_excel("Signature_Genes.xlsx", sheet = arg))
+names(all_tbls) <- tbl_allsheets
+```
+
+
+# Working on each sheet separately
+
+```{r}
+Skin_Tregs_signature <- all_tbls$Skin_Tregs_signature$NA.
+Colon_tTregs_signature <- all_tbls$Colon_tTregs_signature$NA.
+Colon_pTregs_signature <- all_tbls$Colon_pTregs_signature$NA.
+SLE_signature <- all_tbls$SLE_signature$NA.
+SLE_tisTregs_signature <- all_tbls$SLE_tisTregs_signature$NA.
+SLE_new_signature <- all_tbls$SLE_new_signature$x
+SLE_naive_signature <- all_tbls$SLE_naive_signature$...1
+Skin_Colon_Signature <- all_tbls$Skin_Colon_Signature$...1
+Regenerative_Signature <- all_tbls$Regenerative_Signature$...1
+SLE_NLT_like_signature <- all_tbls$SLE_NLT_like_signature$...1
+Core_Signature <- all_tbls$Core_Signature$x
+```
+
+```{r}
+signatures <- list(
+  Skin_Tregs_signature = Skin_Tregs_signature,
+  Colon_tTregs_signature = Colon_tTregs_signature,
+  Colon_pTregs_signature = Colon_pTregs_signature,
+  SLE_signature = SLE_signature,
+  SLE_tisTregs_signature = SLE_tisTregs_signature,
+  SLE_new_signature = SLE_new_signature,
+  SLE_naive_signature = SLE_naive_signature,
+  Skin_Colon_Signature = Skin_Colon_Signature,
+  Regenerative_Signature = Regenerative_Signature,
+  SLE_NLT_like_signature = SLE_NLT_like_signature,
+  Core_Signature = Core_Signature
+)
+
+lapply(signatures, length)
+
+saveRDS(signatures, "inst/extdata/Treggae_signatures.rds")
+```
+
+
+
+# Session info {-}
+
+```{r}
+sessionInfo()
+```
+

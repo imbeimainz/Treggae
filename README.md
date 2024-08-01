@@ -25,9 +25,28 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library("Treggae")
-Treggae::signature("signature_name")
+
+Treggae::get_signature("Core_Signature")
+#>  [1] "Foxp3"    "Ikzf2"    "Tnfrsf4"  "Izumo1r"  "Ighm"     "Ctla4"   
+#>  [7] "Tnfrsf18" "Cd74"     "Ltb"      "Ifi27l2a"
 
 Treggae::list_signatures()
+#> Treggae signatures: 
+#> ------
+#>   Providing a total of 11 signatures: 
+#> Skin_Tregs_signature --- 19 members
+#> Colon_tTregs_signature --- 10 members
+#> Colon_pTregs_signature --- 17 members
+#> SLE_signature --- 14 members
+#> SLE_tisTregs_signature --- 18 members
+#> SLE_new_signature --- 194 members
+#> SLE_naive_signature --- 24 members
+#> Skin_Colon_Signature --- 200 members
+#> Regenerative_Signature --- 21 members
+#> SLE_NLT_like_signature --- 29 members
+#> Core_Signature --- 10 members
+#> 
+#> You can access the individual signatures by using the `get_signatures()` or `get_signature()` functions
 ```
 
 ## Code of Conduct

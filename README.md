@@ -4,6 +4,8 @@
 # Treggae
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/imbeimainz/Treggae/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/imbeimainz/Treggae/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 `Treggae` is your dancing companion for exploring gene signatures in the

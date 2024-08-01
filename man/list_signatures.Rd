@@ -2,16 +2,17 @@
 % Please edit documentation in R/Treggae_signatures.R
 \name{list_signatures}
 \alias{list_signatures}
-\title{Title}
+\title{List all signatures}
 \usage{
 list_signatures()
 }
 \value{
-TODO
+Invisible NULL. Prints a summary as a message
 }
 \description{
-Title
+List all signatures available in Treggae with a compact summary
 }
 \examples{
-# TODO
+list_signatures()
+
 }

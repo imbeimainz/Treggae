@@ -1,19 +1,47 @@
 ---
-title: "Introduction_to_Treggae"
-output: rmarkdown::html_vignette
+title: >
+  Introduction to Treggae
+author:
+- name: Federico Marini
+  affiliation:
+  - Institute of Medical Biostatistics, Epidemiology and Informatics (IMBEI), Mainz
+  - Research Center for Immunotherapy (FZI), Mainz
+  email: marinif@uni-mainz.de
+date: "`r BiocStyle::doc_date()`"
+output:
+  BiocStyle::html_document:
+    toc: true
+    toc_float: true
 vignette: >
-  %\VignetteIndexEntry{Introduction_to_Treggae}
+  %\VignetteIndexEntry{Treggae_userguide}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
----
+  %\VignettePackage{Treggae}
 
+---
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  error    = FALSE,
+  warning  = FALSE,
+  eval     = TRUE,
+  message  = FALSE
 )
 ```
+
+# Introduction {#introduction}
+
+This vignette describes how to use the `r BiocStyle::Biocpkg("Treggae")` package for...
 
 ```{r setup}
 library(Treggae)
 ```
+
+
+# Session info {-}
+
+```{r}
+sessionInfo()
+```
+
